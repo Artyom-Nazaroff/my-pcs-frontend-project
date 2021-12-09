@@ -1,0 +1,18 @@
+.postItem {
+    width: 100%;
+    background: aliceblue;
+    box-shadow: 0 0 10px black;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.body {
+    font-size: 16px;
+}
