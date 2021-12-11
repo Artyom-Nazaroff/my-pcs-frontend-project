@@ -1,10 +1,18 @@
 import React from 'react';
-import classes from './Textarea.module.css'
+import classes from './Modal.module.css'
 
-const Textarea = (props) => {
+const Modal = ({children, windowState, setModal}) => {
+
+    let changeClasses;
+    windowState ? changeClasses = [classes.window, classes.active] : changeClasses = [classes.window];
+
     return (
-        <textarea className={classes.textarea} {...props}/>
+        <div className={changeClasses.join(' ')} onClick={() => setModal(false)}>
+            <div className={classes.window__content} onClick={event => event.stopPropagation()}>
+                {children}
+            </div>
+        </div>
     );
 };
 
-export default Textarea;
+export default Modal;

@@ -1,10 +1,10 @@
 import React from 'react';
-import classes from './Input.module.css'
+import classes from './Textarea.module.css'
 
-const Input = (props) => {
+const Textarea = (props) => {
     return (
-        <input className={classes.input} {...props}/>
+        <textarea className={classes.textarea} {...props}/>
     );
 };
 
-export default Input;
+export default Textarea;

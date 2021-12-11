@@ -1,8 +1,7 @@
-.input {
-    width: 100%;
-    padding: 10px;
-    outline: none;
-    border: 1px solid aquamarine;
-    border-radius: 3px;
-    margin: 0 0 10px 0;
+.button {
+    padding: 5px 15px;
+    border: none;
+    background: aquamarine;
+    border-radius: 5px;
+    cursor: pointer;
 }

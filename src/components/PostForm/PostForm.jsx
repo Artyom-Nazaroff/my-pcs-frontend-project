@@ -1,15 +1,42 @@
-import React from 'react';
-import classes from './PostList.module.css'
-import PostItem from "../PostItem/PostItem";
+import React, {useState} from 'react';
+import classes from './PostForm.module.css'
+import Input from "../_UI/Input/Input";
+import Button from "../_UI/Button/Button";
+import Textarea from "../_UI/Textarea/Textarea";
 
-const PostList = ({posts}) => {
+
+const PostForm = ({createPost}) => {
+
+    const [post, setPost] = useState({title: '', body: '',});
+
+    function addNewPost(event) {
+        event.preventDefault();
+        const newPost = {
+            ...post,
+            id: Date.now(),
+        };
+        createPost(newPost);
+        setPost({title: '', body: '',});
+    }
 
     return (
-        <div className={classes.postList}>
-            <h2 className={classes.title}>Post List</h2>
-            { posts.map(post => <PostItem post={post}/>) }
-        </div>
+        <form className={classes.formContainer}>
+            <h2 className={classes.title}>New post</h2>
+            <Input
+                type="text"
+                placeholder={'Your title...'}
+                value={post.title}
+                onChange={event => setPost({...post, title: event.target.value})}
+            />
+            <Textarea
+                type="text"
+                placeholder={'Your text...'}
+                value={post.body}
+                onChange={event => setPost({...post, body: event.target.value})}
+            />
+            <Button onClick={addNewPost}>Post text</Button>
+        </form>
     );
 };
 
-export default PostList;
+export default PostForm;

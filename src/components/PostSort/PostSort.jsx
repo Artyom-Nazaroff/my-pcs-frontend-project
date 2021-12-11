@@ -1,14 +1,17 @@
 import React from 'react';
-import classes from './Select.module.css'
+import classes from './PostSort.module.css'
 
-const Select = (props) => {
+const PostSort = ({options, value, changeValue}) => {
     return (
-        <select>
-            <option disabled={true}>Сортировать по...</option>
-            <option value="">По заголовку</option>
-            <option value="">По описанию</option>
+        <select
+            value={value}
+            onChange={event => changeValue(event.target.value)}
+        >
+            <option disabled value={''}>Сортировать по...</option>
+            {options.map(option =>
+                <option key={option.value} value={option.value}>{option.name}</option>)}
         </select>
     );
 };
 
-export default Select;
+export default PostSort;

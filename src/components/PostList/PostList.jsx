@@ -1,13 +1,22 @@
 import React from 'react';
-import classes from './PostItem.module.css'
+import classes from './PostList.module.css'
+import PostItem from "../PostItem/PostItem";
 
-const PostItem = (props) => {
+const PostList = ({posts, deletePost}) => {
+
+    if (!posts.length) return <div className={'posts-notification'}>There are no posts here</div>
+
     return (
-        <div className={classes.postItem}>
-            <div className={classes.title}>{number}. {title}</div>
-            <div className={classes.body}>{body}</div>
+        <div className={classes.postList}>
+            <h2 className={classes.title}>Post List</h2>
+            {posts.map((post, index) => <PostItem
+                post={post}
+                key={post.id}
+                number={index + 1}
+                deletePost={deletePost}
+            />)}
         </div>
     );
 };
 
-export default PostItem;
+export default PostList;

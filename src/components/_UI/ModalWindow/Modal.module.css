@@ -1,10 +1,21 @@
-.textarea {
-    width: 100%;
-    padding: 10px;
-    outline: none;
-    border: 1px solid aquamarine;
-    border-radius: 3px;
-    margin: 0 0 10px 0;
-    resize: none;
-    height: 100px;
+.window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.window.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window__content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
 }
