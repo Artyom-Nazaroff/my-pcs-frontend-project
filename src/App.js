@@ -14,6 +14,9 @@ function App() {
         if (localStorage.getItem('auth')) {
             setIsAuth(true);
         }
+        if (localStorage.getItem('person')) {
+            setCreateProfile({key: 'value'});
+        }
     }, [])
 
     return (

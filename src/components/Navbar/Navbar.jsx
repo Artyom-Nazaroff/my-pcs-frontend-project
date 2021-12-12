@@ -17,11 +17,17 @@ const Navbar = () => {
     return (
         <header className={stl.navbar}>
             <div className='container'>
-                <Button onClick={logout}>Log out</Button>
-                <div className="navbar__links">
-                    <Link to={'/friends'}>Friends</Link>
-                    <Link to={'/posts'}>Posts</Link>
-                    <Link to={'/about'}>About</Link>
+                <div className={stl.navbarInner}>
+                    <div className={stl.logo}>
+                        <img src="https://s1.mzstatic.com/us/r30/Purple4/v4/df/00/e3/df00e3a2-8afd-a2b2-0cdc-67738800d435/mzl.nhwlesvh.png" alt="logo"/>
+                    </div>
+                    <div className={stl.navbarLinks}>
+                        <Link to={'/profile'}>Profile</Link>
+                        <Link to={'/friends'}>Friends</Link>
+                        <Link to={'/posts'}>Posts</Link>
+                        <Link to={'/about'}>About</Link>
+                    </div>
+                    <Button onClick={logout}>Выйти</Button>
                 </div>
             </div>
         </header>

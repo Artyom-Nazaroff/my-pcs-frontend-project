@@ -1,12 +1,37 @@
 .navbar {
-    height: 60px;
+    height: 80px;
     width: 100%;
-    background-color: blueviolet;
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
+    background-color: rgb(26, 183, 234);
 }
 
-.navbar__links {
-    margin-left: auto;
+.navbarInner {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-width: 80px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.navbarLinks {
+    flex: 0 1 60%;
+    display: flex;
+    margin: 0 0 0 100px;
+}
+
+.navbarLinks a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 20px 0 0;
+}
+
+.navbarLinks a:hover {
+    color: #cccccc;
 }

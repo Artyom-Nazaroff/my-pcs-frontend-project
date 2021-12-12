@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import stl from './RegistrationForm.module.css'
 import Input from "../_UI/Input/Input";
 import {ProfileContext} from "../../context/context";
@@ -7,6 +7,24 @@ import Button from "../_UI/Button/Button";
 const RegistrationForm = () => {
     const {createProfile, setCreateProfile} = useContext(ProfileContext);
 
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [city, setCity] = useState('');
+    const [phone, setPhone] = useState('');
+    // const [photo, setPhoto] = useState('');
+
+    const createNewProfile = () => {
+        const user = {
+            firstName,
+            lastName,
+            city,
+            phone,
+            // photo,
+        }
+        setCreateProfile(user);
+        localStorage.setItem('person', JSON.stringify(user))
+    }
+
 
     return (
         <div className={stl.regPageWrapper}>
@@ -14,28 +32,30 @@ const RegistrationForm = () => {
             <form className={stl.form}>
                 <div className={stl.inputWrapper}>
                     <label>Имя</label>
-                    <Input/>
+                    <Input value={firstName} onChange={event => setFirstName(event.target.value)}/>
                 </div>
                 <div className={stl.inputWrapper}>
                     <label>Фамилия</label>
-                    <Input/>
+                    <Input value={lastName} onChange={event => setLastName(event.target.value)}/>
                 </div>
                 <div className={stl.inputWrapper}>
                     <label>Город</label>
-                    <Input/>
+                    <Input value={city} onChange={event => setCity(event.target.value)}/>
                 </div>
                 <div className={stl.inputWrapper}>
                     <label>Телефон</label>
-                    <Input/>
+                    <Input value={phone} onChange={event => setPhone(event.target.value)}/>
                 </div>
-                <div className={stl.inputWrapper}>
-                    <label>Загрузить фото</label>
-                    <Input
-                        style={{border: 'none'}}
-                        type={'file'}
-                    />
-                </div>
-                <Button onClick={() => setCreateProfile({key: 'Value'})}>Регистрация</Button>
+                {/*<div className={stl.inputWrapper}>*/}
+                {/*    <label>Загрузить фото</label>*/}
+                {/*    <Input*/}
+                {/*        style={{border: 'none'}}*/}
+                {/*        type={'file'}*/}
+                {/*        value={photo}*/}
+                {/*        onChange={event => setPhoto(event.target.value)}*/}
+                {/*    />*/}
+                {/*</div>*/}
+                <Button onClick={createNewProfile}>Регистрация</Button>
             </form>
         </div>
     );

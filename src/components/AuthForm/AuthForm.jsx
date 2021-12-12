@@ -8,7 +8,6 @@ const AuthForm = () => {
 
     const [emailErrMessage, setEmailErrMessage] = useState('');
     const [passwordErrMessage, setPasswordErrMessage] = useState('');
-    const [isDisabled, setIsDisabled] = useState(true);
 
     const email = useLoginInput({isEmpty: true, isEmail: true});
     const password = useLoginInput({isEmpty: true, minLength: 8});

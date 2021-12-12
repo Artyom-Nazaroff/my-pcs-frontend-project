@@ -1,9 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useFetching} from "../../hooks/useFetching";
 import FriendsService from "../../API/FriendsService";
 import FriendItem from "../../components/FriendItem";
+import {ProfileContext} from "../../context/context";
 
 const Friends = () => {
+
+    const {createProfile, setCreateProfile} = useContext(ProfileContext);
+    console.log(createProfile)
     const [friends, setFriends] = useState([]);
 
     const [fetchFriends, isLoading, postError] = useFetching(async () => {

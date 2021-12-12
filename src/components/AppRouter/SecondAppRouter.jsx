@@ -1,11 +1,10 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {Route, Routes} from "react-router-dom";
-import {huyablicRoutes, privateRoutes, publicRoutes, registrationRoutes} from "../../router/route";
-import {AuthContext, ProfileContext} from "../../context/context";
+import {privateRoutes, registrationRoutes} from "../../router/route";
+import {ProfileContext} from "../../context/context";
 
 
 const SecondAppRouter = () => {
-    const {isAuth, setIsAuth} = useContext(AuthContext);
     const {createProfile, setCreateProfile} = useContext(ProfileContext);
 
 
@@ -33,6 +32,5 @@ const SecondAppRouter = () => {
             </Routes>
     );
 };
-
 
 export default SecondAppRouter;

@@ -10,7 +10,7 @@ html, body {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: azure;
+  background: #dce1e6;
 }
 
 textarea, input, button {
@@ -23,7 +23,8 @@ textarea, input, button {
 }
 
 .container {
-  border: 10px solid red;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 
