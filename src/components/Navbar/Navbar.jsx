@@ -2,13 +2,15 @@ import React, {useContext} from 'react';
 import stl from './Navbar.module.css';
 import {Link} from "react-router-dom";
 import Button from "../_UI/Button/Button";
-import {AuthContext} from "../../context/context";
+import {AuthContext, ProfileContext} from "../../context/context";
 
 const Navbar = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
+    const {createProfile, setCreateProfile} = useContext(ProfileContext);
 
     const logout = () => {
         setIsAuth(false);
+        setCreateProfile({});
         localStorage.removeItem('auth');
     }
 

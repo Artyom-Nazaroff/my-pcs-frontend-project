@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import AppRouter from "./components/AppRouter/AppRouter";
+import FirstAppRouter from "./components/AppRouter/FirstAppRouter";
 import {AuthContext, ProfileContext} from "./context/context";
 import {useEffect, useState} from "react";
 
@@ -21,8 +21,8 @@ function App() {
             <AuthContext.Provider value={{isAuth, setIsAuth}}>
                 <BrowserRouter>
                     <div className={'App'}>
-                        {/*<Navbar/>*/}
-                        <AppRouter/>
+                        <Navbar/>
+                        <FirstAppRouter/>
                     </div>
                 </BrowserRouter>
             </AuthContext.Provider>

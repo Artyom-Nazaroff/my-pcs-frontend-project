@@ -1,14 +1,16 @@
 import React, {useContext, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
-import {privateRoutes, publicRoutes} from "../../router/route";
-import {AuthContext} from "../../context/context";
+import {huyablicRoutes, privateRoutes, publicRoutes, registrationRoutes} from "../../router/route";
+import {AuthContext, ProfileContext} from "../../context/context";
 
 
-const AppRouter = () => {
+const SecondAppRouter = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
+    const {createProfile, setCreateProfile} = useContext(ProfileContext);
+
 
     return (
-        isAuth
+        Object.keys(createProfile).length !== 0
             ?
             <Routes>
                 {privateRoutes.map(route =>
@@ -21,7 +23,7 @@ const AppRouter = () => {
             </Routes>
             :
             <Routes>
-                {publicRoutes.map(route =>
+                {registrationRoutes.map(route =>
                     <Route
                         path={route.path}
                         element={route.element}
@@ -32,4 +34,5 @@ const AppRouter = () => {
     );
 };
 
-export default AppRouter;
+
+export default SecondAppRouter;
