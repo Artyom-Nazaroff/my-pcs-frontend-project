@@ -4,7 +4,7 @@
 }
 
 .profilePic {
-    flex: 0 1 20%;
+    flex: 0 0 20%;
     align-self: flex-start;
     width: 200px;
     border-radius: 10px;
@@ -16,21 +16,17 @@
 
 .profilePic img {
     width: 100%;
+    margin: 0 0 20px 0;
 }
 
 .profileInfo {
-    flex: 0 1 80%;
-    width: 100%;
-    padding: 15px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
+    flex: 0 0 80%;
 }
 
 .profileTitle {
     font-size: 24px;
     padding: 0 0 10px 0;
-    margin: 0 0 50px 0;
+    margin: 0 0 20px 0;
     border-bottom: 1px solid #737373;
 }
 
@@ -38,4 +34,30 @@
     display: grid;
     grid-template-columns: 200px 1fr;
     row-gap: 10px;
+}
+
+.newPostForm {
+    padding: 0 20px 20px 20px;
+    margin: 0 0 20px;
+    border-bottom: 1px solid #737373;
+}
+
+.postItem {
+    background-color: #f0f0f3;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.postItem:not(:last-child) {
+    margin: 0 0 10px 0;
+}
+
+.postTitle {
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.postsWarning {
+    text-align: center;
+    font-weight: bold;
 }

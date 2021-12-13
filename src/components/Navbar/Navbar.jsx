@@ -27,7 +27,10 @@ const Navbar = () => {
                         <Link to={'/posts'}>Posts</Link>
                         <Link to={'/about'}>About</Link>
                     </div>
-                    <Button onClick={logout}>Выйти</Button>
+                    <Button
+                        style={{backgroundColor: 'white', color: 'rgb(26, 183, 234)'}}
+                        onClick={logout}
+                    >Выйти</Button>
                 </div>
             </div>
         </header>

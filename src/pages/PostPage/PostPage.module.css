@@ -1,0 +1,27 @@
+.postContainer {
+    padding: 30px 0;
+}
+
+.commentsContainer {
+    padding: 30px 30px 10px 30px;
+}
+
+.post {
+    background: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.commentsTitle {
+    margin: 0 0 15px 0;
+}
+
+.commentItem {
+    background-color: #f0f0f3;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.commentItem:not(:last-child) {
+    margin: 0 0 15px 0;
+}

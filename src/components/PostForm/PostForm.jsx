@@ -15,8 +15,10 @@ const PostForm = ({createPost}) => {
             ...post,
             id: Date.now(),
         };
-        createPost(newPost);
-        setPost({title: '', body: '',});
+        if (post.title || post.body) {
+            createPost(newPost);
+            setPost({title: '', body: '',});
+        }
     }
 
     return (
@@ -25,13 +27,13 @@ const PostForm = ({createPost}) => {
             <Input
                 style={{marginBottom: 15}}
                 type="text"
-                placeholder={'Your title...'}
+                placeholder={'Тема поста...'}
                 value={post.title}
                 onChange={event => setPost({...post, title: event.target.value})}
             />
             <Textarea
                 type="text"
-                placeholder={'Your text...'}
+                placeholder={'Текст поста...'}
                 value={post.body}
                 onChange={event => setPost({...post, body: event.target.value})}
             />

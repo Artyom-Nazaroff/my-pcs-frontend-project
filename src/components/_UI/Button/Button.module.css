@@ -1,8 +1,12 @@
 .button {
     padding: 5px 15px;
     border: none;
-    background: rgba(115, 115, 115, 0.53);
+    background: rgb(26, 183, 234);
     border-radius: 10px;
     color: white;
     cursor: pointer;
+}
+
+.button:active {
+    transform: translateY(2px);
 }

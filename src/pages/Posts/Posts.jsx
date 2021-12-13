@@ -9,6 +9,7 @@ import PostForm from "../../components/PostForm/PostForm";
 import PostFilter from "../../components/PostFilter/PostFilter";
 import PostList from "../../components/PostList/PostList";
 import PostService from "../../API/PostService";
+import Loader from "../../components/_UI/Loader/Loader";
 
 
 function Posts() {
@@ -20,7 +21,7 @@ function Posts() {
     const [fetching, setFetching] = useState(true);
 
     const searchedAndSortedPosts = usePosts(posts, filter.sort, filter.query);
-    const [fetchPosts, postError] = useFetching(async () => {
+    const [fetchPosts, postsLoading, postError] = useFetching(async () => {
         try {
             const response = await PostService.getAllPosts(page);
             setPosts([...posts, ...response.data]);
@@ -49,7 +50,7 @@ function Posts() {
     }, [fetching]);
 
     function createPost(newPost) {
-        setPosts([...posts, newPost]);
+        setPosts([newPost, ...posts]);
         setModal(false);
     }
 
@@ -69,8 +70,8 @@ function Posts() {
                     </Modal>
                     <PostFilter filter={filter} setFilter={setFilter}/>
                 </div>
-                {postError && <h1>Произошла ошибка ${postError}</h1>}
                 <PostList posts={searchedAndSortedPosts} deletePost={deletePost}/>
+                {postsLoading && <Loader/>}
             </div>
         </div>
     );

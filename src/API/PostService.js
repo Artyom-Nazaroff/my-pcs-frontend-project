@@ -16,6 +16,11 @@ export default class PostService {
         const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
         return response;
     };
+
+    static async getFriendPosts(id) {
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}/posts`);
+        return response;
+    };
 }
 
 

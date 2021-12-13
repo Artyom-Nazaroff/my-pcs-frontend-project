@@ -1,6 +1,6 @@
 import React from "react";
 import About from "../pages/About";
-import PostPage from "../pages/PostPage";
+import PostPage from "../pages/PostPage/PostPage";
 import Posts from "../pages/Posts/Posts";
 import Friends from "../pages/Friends/Friends";
 import FriendProfile from "../pages/FriendProfile/FriendProfile";

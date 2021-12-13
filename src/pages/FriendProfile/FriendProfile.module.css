@@ -23,21 +23,7 @@
     flex: 0 0 80%;
 }
 
-.profileInfo {
-    width: 100%;
-    padding: 15px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 0 0 20px;
-}
 
-.profileTitle {
-    font-size: 24px;
-    padding: 0 0 10px 0;
-    margin: 0 0 20px 0;
-    border-bottom: 1px solid #737373;
-}
 
 .gridContainer {
     display: grid;
@@ -45,18 +31,17 @@
     row-gap: 10px;
 }
 
-.photos {
-    width: 100%;
-    padding: 15px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
+.postItem {
+    padding: 5px;
+    margin: 0 0 10px 0;
+    background-color: #f0f0f3;
+    border-radius: 5px;
 }
 
-.photosTitle {
-    font-size: 24px;
-    padding: 0 0 10px 0;
-    margin: 0 0 20px 0;
-    border-bottom: 1px solid #737373;
+.postTitle {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
+
+
 
