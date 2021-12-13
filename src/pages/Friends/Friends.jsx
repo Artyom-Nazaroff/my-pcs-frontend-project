@@ -1,7 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
+import stl from './Friends.module.css';
 import {useFetching} from "../../hooks/useFetching";
 import FriendsService from "../../API/FriendsService";
-import FriendItem from "../../components/FriendItem";
+import FriendItem from "../../components/FriendItem/FriendItem";
 import {ProfileContext} from "../../context/context";
 
 const Friends = () => {
@@ -20,16 +21,19 @@ const Friends = () => {
     }, []);
 
     return (
-        <div>
-            <h2>Список друзей:</h2>
-            {friends.map(friend =>
-                <FriendItem
-                    key={friend.id}
-                    id={friend.id}
-                    name={friend.name}
-                    email={friend.email}
-                />
-            )}
+        <div className={'container'}>
+            <div className={stl.friendsContainer}>
+                <h2 className={stl.title}>Список друзей:</h2>
+                {friends.map(friend =>
+                    <FriendItem
+                        src={`/img/friendsPhotos/pic0${friend.id}.jpeg`}
+                        key={friend.id}
+                        id={friend.id}
+                        name={friend.name}
+                        email={friend.email}
+                    />
+                )}
+            </div>
         </div>
     );
 };

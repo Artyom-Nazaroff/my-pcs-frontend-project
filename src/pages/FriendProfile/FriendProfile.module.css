@@ -4,7 +4,7 @@
 }
 
 .profilePic {
-    flex: 0 1 20%;
+    flex: 0 0 20%;
     align-self: flex-start;
     width: 200px;
     border-radius: 10px;
@@ -18,19 +18,24 @@
     width: 100%;
 }
 
+.profile {
+    width: 100%;
+    flex: 0 0 80%;
+}
+
 .profileInfo {
-    flex: 0 1 80%;
     width: 100%;
     padding: 15px;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    margin: 0 0 20px;
 }
 
 .profileTitle {
     font-size: 24px;
     padding: 0 0 10px 0;
-    margin: 0 0 50px 0;
+    margin: 0 0 20px 0;
     border-bottom: 1px solid #737373;
 }
 
@@ -39,3 +44,19 @@
     grid-template-columns: 200px 1fr;
     row-gap: 10px;
 }
+
+.photos {
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.photosTitle {
+    font-size: 24px;
+    padding: 0 0 10px 0;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #737373;
+}
+

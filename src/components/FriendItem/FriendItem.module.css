@@ -1,0 +1,30 @@
+.friendContainer {
+    display: flex;
+    margin: 15px 0;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.friendPicture {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 30px 0 0;
+}
+
+.friendPicture img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.friendName {
+    padding: 15px;
+}
+
+.nameString {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}

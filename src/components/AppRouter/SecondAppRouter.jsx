@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Route, Routes} from "react-router-dom";
 import {privateRoutes, registrationRoutes} from "../../router/route";
 import {ProfileContext} from "../../context/context";
@@ -6,6 +6,12 @@ import {ProfileContext} from "../../context/context";
 
 const SecondAppRouter = () => {
     const {createProfile, setCreateProfile} = useContext(ProfileContext);
+
+    useEffect(() => {
+        if (localStorage.getItem('person')) {
+            setCreateProfile({key: 'value'});
+        }
+    }, [])
 
 
     return (

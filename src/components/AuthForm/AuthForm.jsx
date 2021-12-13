@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import stl from './AuthForm.module.css'
 import {useLoginInput} from "../../hooks/useLoginInput";
 import {AuthContext} from "../../context/context";

@@ -8,7 +8,7 @@ const PostList = ({posts, deletePost}) => {
 
     return (
         <div className={classes.postList}>
-            <h2 className={classes.title}>Post List</h2>
+            <h2 className={classes.title}>Список постов</h2>
             {posts.map((post, index) => <PostItem
                 post={post}
                 key={post.id}

@@ -21,8 +21,9 @@ const PostForm = ({createPost}) => {
 
     return (
         <form className={classes.formContainer}>
-            <h2 className={classes.title}>New post</h2>
+            <h2 className={classes.title}>Создать пост</h2>
             <Input
+                style={{marginBottom: 15}}
                 type="text"
                 placeholder={'Your title...'}
                 value={post.title}
@@ -34,7 +35,7 @@ const PostForm = ({createPost}) => {
                 value={post.body}
                 onChange={event => setPost({...post, body: event.target.value})}
             />
-            <Button onClick={addNewPost}>Post text</Button>
+            <Button onClick={addNewPost}>Отправить</Button>
         </form>
     );
 };

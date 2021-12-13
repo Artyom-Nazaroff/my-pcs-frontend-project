@@ -7,8 +7,9 @@ const PostFilter = ({filter, setFilter}) => {
     return (
         <div>
             <Input
+                style={{marginBottom: 15}}
                 type="text"
-                placeholder={'Search...'}
+                placeholder={'Поиск...'}
                 value={filter.query}
                 onChange={event => setFilter({...filter, query: event.target.value})}
             />

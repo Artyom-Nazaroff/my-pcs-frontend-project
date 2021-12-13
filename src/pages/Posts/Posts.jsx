@@ -1,12 +1,14 @@
+import React from "react";
+import stl from './Posts.module.css'
 import {useEffect, useState} from "react";
-import {usePosts} from "../hooks/usePosts";
-import {useFetching} from "../hooks/useFetching";
-import Button from "../components/_UI/Button/Button";
-import Modal from "../components/_UI/ModalWindow/Modal";
-import PostForm from "../components/PostForm/PostForm";
-import PostFilter from "../components/PostFilter/PostFilter";
-import PostList from "../components/PostList/PostList";
-import PostService from "../API/PostService";
+import {usePosts} from "../../hooks/usePosts";
+import {useFetching} from "../../hooks/useFetching";
+import Button from "../../components/_UI/Button/Button";
+import Modal from "../../components/_UI/ModalWindow/Modal";
+import PostForm from "../../components/PostForm/PostForm";
+import PostFilter from "../../components/PostFilter/PostFilter";
+import PostList from "../../components/PostList/PostList";
+import PostService from "../../API/PostService";
 
 
 function Posts() {
@@ -57,14 +59,19 @@ function Posts() {
 
 
     return (
-        <div className="App">
-            <Button style={{marginBottom: '20px'}} onClick={() => setModal(true)}>Create post</Button>
-            <Modal windowState={modal} setModal={setModal}>
-                <PostForm createPost={createPost}/>
-            </Modal>
-            <PostFilter filter={filter} setFilter={setFilter}/>
-            {postError && <h1>Произошла ошибка ${postError}</h1>}
-            <PostList posts={searchedAndSortedPosts} deletePost={deletePost}/>
+        <div className="container">
+            <div className={stl.postsContainer}>
+                <div className={stl.postsEdit}>
+                    <Button style={{margin: '0 0 15px 30px'}} onClick={() => setModal(true)}>Создать
+                        пост</Button>
+                    <Modal windowState={modal} setModal={setModal}>
+                        <PostForm createPost={createPost}/>
+                    </Modal>
+                    <PostFilter filter={filter} setFilter={setFilter}/>
+                </div>
+                {postError && <h1>Произошла ошибка ${postError}</h1>}
+                <PostList posts={searchedAndSortedPosts} deletePost={deletePost}/>
+            </div>
         </div>
     );
 }
