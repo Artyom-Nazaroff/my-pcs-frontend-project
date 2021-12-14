@@ -29,7 +29,7 @@ const PostPage = () => {
             <div className={stl.postContainer}>
                 <div className={'contentContainer'}>
                     <div className={stl.post}>
-                        <h2>{post.title}</h2>
+                        <h2 className={stl.postTitle}>{post.title}</h2>
                         <p>{post.body}</p>
                     </div>
                     <div className={stl.commentsContainer}>

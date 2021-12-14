@@ -24,7 +24,7 @@ function App() {
             <AuthContext.Provider value={{isAuth, setIsAuth}}>
                 <BrowserRouter>
                     <div className={'App'}>
-                        <Navbar/>
+                        {/*<Navbar/>*/}
                         <FirstAppRouter/>
                     </div>
                 </BrowserRouter>

@@ -12,6 +12,11 @@
     border-radius: 5px;
 }
 
+.postTitle {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
 .commentsTitle {
     margin: 0 0 15px 0;
 }

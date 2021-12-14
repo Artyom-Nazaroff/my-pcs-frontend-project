@@ -1,5 +1,4 @@
 import React from "react";
-import About from "../pages/About";
 import PostPage from "../pages/PostPage/PostPage";
 import Posts from "../pages/Posts/Posts";
 import Friends from "../pages/Friends/Friends";
@@ -11,7 +10,6 @@ import Profile from "../pages/Profile/Profile";
 
 export const privateRoutes = [
     {path: 'profile', element: <Profile/>},
-    {path: 'about', element: <About/>},
     {path: 'posts', element: <Posts/>},
     {path: 'posts/:id', element: <PostPage/>},
     {path: 'friends', element: <Friends/>},

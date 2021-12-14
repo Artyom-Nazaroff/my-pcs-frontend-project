@@ -11,7 +11,6 @@ const RegistrationForm = () => {
     const [lastName, setLastName] = useState('');
     const [city, setCity] = useState('');
     const [phone, setPhone] = useState('');
-    // const [photo, setPhoto] = useState('');
 
     const createNewProfile = () => {
         const user = {
@@ -19,7 +18,6 @@ const RegistrationForm = () => {
             lastName,
             city,
             phone,
-            // photo,
         }
         setCreateProfile(user);
         localStorage.setItem('person', JSON.stringify(user))
@@ -46,15 +44,6 @@ const RegistrationForm = () => {
                     <label>Телефон</label>
                     <Input value={phone} onChange={event => setPhone(event.target.value)}/>
                 </div>
-                {/*<div className={stl.inputWrapper}>*/}
-                {/*    <label>Загрузить фото</label>*/}
-                {/*    <Input*/}
-                {/*        style={{border: 'none'}}*/}
-                {/*        type={'file'}*/}
-                {/*        value={photo}*/}
-                {/*        onChange={event => setPhoto(event.target.value)}*/}
-                {/*    />*/}
-                {/*</div>*/}
                 <Button onClick={createNewProfile}>Регистрация</Button>
             </form>
         </div>

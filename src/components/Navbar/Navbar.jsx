@@ -25,7 +25,6 @@ const Navbar = () => {
                         <Link to={'/profile'}>Profile</Link>
                         <Link to={'/friends'}>Friends</Link>
                         <Link to={'/posts'}>Posts</Link>
-                        <Link to={'/about'}>About</Link>
                     </div>
                     <Button
                         style={{backgroundColor: 'white', color: 'rgb(26, 183, 234)'}}
