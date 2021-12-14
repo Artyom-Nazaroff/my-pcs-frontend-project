@@ -1,14 +1,14 @@
 import React from 'react';
-import classes from './Modal.module.css'
+import stl from './Modal.module.css'
 
 const Modal = ({children, windowState, setModal}) => {
 
     let changeClasses;
-    windowState ? changeClasses = [classes.window, classes.active] : changeClasses = [classes.window];
+    windowState ? changeClasses = [stl.window, stl.active] : changeClasses = [stl.window];
 
     return (
         <div className={changeClasses.join(' ')} onClick={() => setModal(false)}>
-            <div className={classes.window__content} onClick={event => event.stopPropagation()}>
+            <div className={stl.window__content} onClick={event => event.stopPropagation()}>
                 {children}
             </div>
         </div>

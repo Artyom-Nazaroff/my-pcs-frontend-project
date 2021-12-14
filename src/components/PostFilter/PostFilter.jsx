@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './PostFilter.module.css'
+import stl from './PostFilter.module.css'
 import Input from "../_UI/Input/Input";
 import PostSort from "../PostSort/PostSort";
 

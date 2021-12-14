@@ -29,12 +29,12 @@ export const useValidation = (value, validations) => {
     }
 }
 
-export const useLoginInput = (validations) => { // Делаем инпуты управляемыми
-    const [value, setValue] = useState(''); // Значение внутри инпута
+export const useLoginInput = (validations) => {
+    const [value, setValue] = useState('');
 
     const valid = useValidation(value, validations)
 
-    const changeValue = (e) => { // Обрабатывает изменения внутри input
+    const changeValue = (e) => {
         setValue(e.target.value);
     }
 

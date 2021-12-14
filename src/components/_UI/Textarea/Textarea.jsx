@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './Textarea.module.css'
+import stl from './Textarea.module.css'
 
 const Textarea = (props) => {
     return (
-        <textarea className={classes.textarea} {...props}/>
+        <textarea className={stl.textarea} {...props}/>
     );
 };
 

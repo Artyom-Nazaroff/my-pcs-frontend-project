@@ -30,3 +30,8 @@
 .commentItem:not(:last-child) {
     margin: 0 0 15px 0;
 }
+
+.commentEmail {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}

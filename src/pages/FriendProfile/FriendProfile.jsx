@@ -5,7 +5,6 @@ import {useFetching} from "../../hooks/useFetching";
 import FriendsService from "../../API/FriendsService";
 import PhotosService from "../../API/PhotosService";
 import PhotoGallery from "../../components/PhotoGallery/PhotoGallery";
-import PostList from "../../components/PostList/PostList";
 import PostService from "../../API/PostService";
 import Loader from "../../components/_UI/Loader/Loader";
 

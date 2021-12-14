@@ -5,3 +5,8 @@
     border: 1px solid rgb(26, 183, 234);
     border-radius: 7px;
 }
+
+.input:focus {
+    border: 1px solid gold;
+    box-shadow: 0 0 3px gold;
+}

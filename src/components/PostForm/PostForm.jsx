@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import classes from './PostForm.module.css'
+import stl from './PostForm.module.css'
 import Input from "../_UI/Input/Input";
 import Button from "../_UI/Button/Button";
 import Textarea from "../_UI/Textarea/Textarea";
@@ -22,8 +22,8 @@ const PostForm = ({createPost}) => {
     }
 
     return (
-        <form className={classes.formContainer}>
-            <h2 className={classes.title}>Создать пост</h2>
+        <form className={stl.formContainer}>
+            <h2 className={stl.title}>Создать пост</h2>
             <Input
                 style={{marginBottom: 15}}
                 type="text"

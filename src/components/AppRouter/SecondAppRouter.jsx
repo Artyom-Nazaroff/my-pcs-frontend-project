@@ -3,7 +3,6 @@ import {Outlet, Route, Routes} from "react-router-dom";
 import {privateRoutes, registrationRoutes} from "../../router/route";
 import {ProfileContext} from "../../context/context";
 import Navbar from "../Navbar/Navbar";
-import Profile from "../../pages/Profile/Profile";
 
 
 const SecondAppRouter = () => {

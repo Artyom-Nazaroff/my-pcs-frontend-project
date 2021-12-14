@@ -19,12 +19,15 @@ const Navbar = () => {
             <div className='container'>
                 <div className={stl.navbarInner}>
                     <div className={stl.logo}>
-                        <img src="https://s1.mzstatic.com/us/r30/Purple4/v4/df/00/e3/df00e3a2-8afd-a2b2-0cdc-67738800d435/mzl.nhwlesvh.png" alt="logo"/>
+                        <img
+                            src="https://s1.mzstatic.com/us/r30/Purple4/v4/df/00/e3/df00e3a2-8afd-a2b2-0cdc-67738800d435/mzl.nhwlesvh.png"
+                            alt="logo"
+                        />
                     </div>
                     <div className={stl.navbarLinks}>
-                        <Link to={'/profile'}>Profile</Link>
-                        <Link to={'/friends'}>Friends</Link>
-                        <Link to={'/posts'}>Posts</Link>
+                        <Link to={'/profile'}>Моя страница</Link>
+                        <Link to={'/friends'}>Друзья</Link>
+                        <Link to={'/posts'}>Посты</Link>
                     </div>
                     <Button
                         style={{backgroundColor: 'white', color: 'rgb(26, 183, 234)'}}

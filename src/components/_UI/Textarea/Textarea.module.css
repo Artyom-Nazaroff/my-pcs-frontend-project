@@ -8,3 +8,8 @@
     resize: none;
     height: 100px;
 }
+
+.textarea:focus {
+    border: 1px solid gold;
+    box-shadow: 0 0 3px gold;
+}

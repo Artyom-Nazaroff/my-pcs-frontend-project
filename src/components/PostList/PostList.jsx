@@ -4,7 +4,7 @@ import PostItem from "../PostItem/PostItem";
 
 const PostList = ({posts, deletePost}) => {
 
-    if (!posts.length) return <div className={'posts-notification'}>There are no posts here</div>
+    if (!posts.length) return <div className={'posts-notification'}>Посты отсутствуют</div>
 
     return (
         <div className={classes.postList}>

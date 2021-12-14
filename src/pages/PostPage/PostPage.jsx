@@ -39,7 +39,7 @@ const PostPage = () => {
                             : <div>
                                 {comments.map(comm =>
                                     <div className={stl.commentItem} key={comm.id}>
-                                        <h5>{comm.email}</h5>
+                                        <h5 className={stl.commentEmail}>{comm.email}</h5>
                                         <div>{comm.body}</div>
                                     </div>
                                 )}

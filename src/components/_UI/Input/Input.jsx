@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './Input.module.css'
+import stl from './Input.module.css'
 
 const Input = (props) => {
     return (
-        <input className={classes.input} {...props}/>
+        <input className={stl.input} {...props}/>
     );
 };
 

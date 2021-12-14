@@ -12,6 +12,7 @@ const RegistrationForm = () => {
     const [city, setCity] = useState('');
     const [phone, setPhone] = useState('');
 
+
     const createNewProfile = () => {
         const user = {
             firstName,
@@ -42,7 +43,10 @@ const RegistrationForm = () => {
                 </div>
                 <div className={stl.inputWrapper}>
                     <label>Телефон</label>
-                    <Input value={phone} onChange={event => setPhone(event.target.value)}/>
+                    <Input
+                        value={phone}
+                        onChange={event => setPhone(prev => /\d+/.test(Number(event.target.value)) ? event.target.value : prev)}
+                    />
                 </div>
                 <Button onClick={createNewProfile}>Регистрация</Button>
             </form>

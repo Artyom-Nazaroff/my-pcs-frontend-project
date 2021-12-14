@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './PostSort.module.css'
+import stl from './PostSort.module.css'
 
 const PostSort = ({options, value, changeValue}) => {
     return (

@@ -12,10 +12,9 @@ const AuthForm = () => {
     const email = useLoginInput({isEmpty: true, isEmail: true});
     const password = useLoginInput({isEmpty: true, minLength: 8});
 
-    const disableSpace = (event) => {
+    const disableSpaceKey = (event) => {
         if (event.keyCode === 32) event.preventDefault();
     }
-
 
     const checkValidation = (event) => {
         event.preventDefault();
@@ -56,7 +55,7 @@ const AuthForm = () => {
                             className={stl.input}
                             onChange={event => email.changeValue(event)}
                             value={email.value}
-                            onKeyDown={event => disableSpace(event)}
+                            onKeyDown={event => disableSpaceKey(event)}
                             type="text"
                             name={'email'} id={'email'}
                             placeholder={'Введите email...'}
@@ -69,7 +68,7 @@ const AuthForm = () => {
                             className={stl.input}
                             onChange={event => password.changeValue(event)}
                             value={password.value}
-                            onKeyDown={event => disableSpace(event)}
+                            onKeyDown={event => disableSpaceKey(event)}
                             type="password"
                             name={'password'}
                             id={'password'}
