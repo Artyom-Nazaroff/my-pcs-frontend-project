@@ -26,7 +26,7 @@ const Navbar = () => {
                     </div>
                     <div className={stl.navbarLinks}>
                         <Link to={'/profile'}>Моя страница</Link>
-                        <Link to={'/friends'}>Друзья</Link>
+                        <Link to={'/friends'}>Пользователи</Link>
                         <Link to={'/posts'}>Посты</Link>
                     </div>
                     <Button

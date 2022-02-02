@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import stl from './AuthForm.module.css'
-import {useLoginInput} from "../../hooks/useLoginInput";
+import {useAuthInput} from "../../hooks/useAuthInput";
 import {AuthContext} from "../../context/context";
 
 const AuthForm = () => {
@@ -9,12 +9,9 @@ const AuthForm = () => {
     const [emailErrMessage, setEmailErrMessage] = useState('');
     const [passwordErrMessage, setPasswordErrMessage] = useState('');
 
-    const email = useLoginInput({isEmpty: true, isEmail: true});
-    const password = useLoginInput({isEmpty: true, minLength: 8});
+    const email = useAuthInput({isEmpty: true, isEmail: true});
+    const password = useAuthInput({isEmpty: true, minLength: 8});
 
-    const disableSpaceKey = (event) => {
-        if (event.keyCode === 32) event.preventDefault();
-    }
 
     const checkValidation = (event) => {
         event.preventDefault();
@@ -55,9 +52,10 @@ const AuthForm = () => {
                             className={stl.input}
                             onChange={event => email.changeValue(event)}
                             value={email.value}
-                            onKeyDown={event => disableSpaceKey(event)}
+                            onKeyDown={event => email.disableSpaceKey(event)}
                             type="text"
-                            name={'email'} id={'email'}
+                            name={'email'}
+                            id={'email'}
                             placeholder={'Введите email...'}
                         />
                         <div className={stl.error}>{emailErrMessage}</div>
@@ -68,7 +66,7 @@ const AuthForm = () => {
                             className={stl.input}
                             onChange={event => password.changeValue(event)}
                             value={password.value}
-                            onKeyDown={event => disableSpaceKey(event)}
+                            onKeyDown={event => email.disableSpaceKey(event)}
                             type="password"
                             name={'password'}
                             id={'password'}

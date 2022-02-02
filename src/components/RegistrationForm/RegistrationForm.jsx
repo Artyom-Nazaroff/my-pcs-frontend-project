@@ -20,8 +20,10 @@ const RegistrationForm = () => {
             city,
             phone,
         }
-        setCreateProfile(user);
-        localStorage.setItem('person', JSON.stringify(user))
+        if (user.firstName && user.lastName && user.city && user.phone) {
+            setCreateProfile(user);
+            localStorage.setItem('person', JSON.stringify(user));
+        }
     }
 
 

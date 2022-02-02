@@ -19,15 +19,12 @@ export const privateRoutes = [
 
 export const authRoutes = [
     {path: '*', element: <AuthForm/>},
-    {path: 'auth', element: <AuthForm/>},
 ]
 
 export const registrationRoutes = [
     {path: '*', element: <RegistrationForm/>},
-    {path: 'registration', element: <RegistrationForm/>},
 ]
 
 export const secondStepRoutes = [
     {path: '*', element: <SecondAppRouter/>},
-    {path: 'secondstep', element: <SecondAppRouter/>},
 ]

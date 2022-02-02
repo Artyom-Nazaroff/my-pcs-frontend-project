@@ -29,7 +29,7 @@ export const useValidation = (value, validations) => {
     }
 }
 
-export const useLoginInput = (validations) => {
+export const useAuthInput = (validations) => {
     const [value, setValue] = useState('');
 
     const valid = useValidation(value, validations)
@@ -38,9 +38,14 @@ export const useLoginInput = (validations) => {
         setValue(e.target.value);
     }
 
+    const disableSpaceKey = (event) => {
+        if (event.keyCode === 32) event.preventDefault();
+    }
+
     return {
         value,
         changeValue,
+        disableSpaceKey,
         ...valid,
     }
 }

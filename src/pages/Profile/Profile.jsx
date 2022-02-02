@@ -4,10 +4,11 @@ import Input from "../../components/_UI/Input/Input";
 import Textarea from "../../components/_UI/Textarea/Textarea";
 import Button from "../../components/_UI/Button/Button";
 import Modal from "../../components/_UI/ModalWindow/Modal";
-import {ProfileContext} from "../../context/context";
+import {AuthContext, ProfileContext} from "../../context/context";
 
 const Profile = () => {
     const {createProfile, setCreateProfile} = useContext(ProfileContext);
+    const {isAuth, setIsAuth} = useContext(AuthContext);
 
     const [posts, setPosts] = useState([]);
     const [postItem, setPostItem] = useState({title: '', body: ''});
@@ -30,7 +31,13 @@ const Profile = () => {
 
     const deletePage = () => {
         setCreateProfile({});
+        setIsAuth(false);
+        localStorage.removeItem('auth');
         localStorage.removeItem('person');
+    }
+
+    const deletePost = (post) => {
+        setPosts(posts.filter(p => p.id !== post.id));
     }
 
     return (
@@ -83,8 +90,11 @@ const Profile = () => {
                         {posts.length === 0 && <div className={stl.postsWarning}>Здесь ещё нет постов</div>}
                         {posts.map(post =>
                             <div className={stl.postItem}>
-                                <h3 className={stl.postTitle}>{post.title}</h3>
-                                <p>{post.body}</p>
+                                <div className={stl.postText}>
+                                    <h3 className={stl.postTitle}>{post.title}</h3>
+                                    <p>{post.body}</p>
+                                </div>
+                                <Button onClick={() => deletePost(post)}>Удалить</Button>
                             </div>
                         )}
                     </div>
